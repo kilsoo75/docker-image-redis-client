@@ -23,9 +23,9 @@ fi
 
 if [ "x$MASTER_NAME" != "x" ]
 then
-  sed -i 's/redis-master/'"$MASTER_NAME"'/g' /usr/local/etc/redis/redis.conf
+  sed -i 's/mastername/'"$MASTER_NAME"'/g' /usr/local/etc/redis/redis.conf
 else
-  sed -i 's/redis-master/'"$MASTER_DEFAULT_NAME"'/g' /usr/local/etc/redis/redis.conf
+  sed -i 's/mastername/'"$MASTER_DEFAULT_NAME"'/g' /usr/local/etc/redis/redis.conf
 fi
 
 # first arg is `-f` or `--some-option`
