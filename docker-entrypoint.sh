@@ -19,6 +19,14 @@ else
 	sed -i 's/redispassword/'"$REDIS_DEFAULT_PASSWORD"'/g' /usr/local/etc/redis/redis.conf
 fi
 
+# replace master dns name
+
+if [ "x$MASTER_NAME" != "x" ]
+then
+  sed -i 's/redis-master/'"$MASTER_NAME"'/g' /usr/local/etc/redis/redis.conf
+else
+  sed -i 's/redis-master/'"$MASTER_DEFAULT_NAME"'/g' /usr/local/etc/redis/redis.conf
+fi
 
 # first arg is `-f` or `--some-option`
 # or first arg is `something.conf`

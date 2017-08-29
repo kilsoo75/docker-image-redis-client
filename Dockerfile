@@ -8,6 +8,9 @@ RUN chown -R redis:redis /usr/local/etc/redis
 ENV REDIS_DEFAULT_PASSWORD redis1234
 ENV MASTER_DEFAULT_PASSWORD "$REDIS_DEFAULT_PASSWORD"
 
+# dns of redis-master
+ENV MASTER_DEFAULT_NAME redis-master
+
 # base tunning for redis
 RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf;
 #sysctl vm.overcommit_memory=1
